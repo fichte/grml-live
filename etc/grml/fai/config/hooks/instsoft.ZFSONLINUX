@@ -1,0 +1,6 @@
+#!/bin/bash
+set -u
+set -e
+. "$GRML_LIVE_CONFIG"
+$ROOTCMD apt-get --yes --force-yes install \
+    dkms build-essential linux-headers-4.19.0-8-amd64

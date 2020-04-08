@@ -67,6 +67,7 @@ parted
 partimage
 passwd
 patch
+pigz
 ppp
 pppoeconf
 procps
