@@ -1,0 +1,7 @@
+#!/bin/bash
+set -u
+set -e
+. "$GRML_LIVE_CONFIG"
+wget -O $target/usr/share/keyrings/amk.wtf-archive-keyring.gpg http://amk.wtf/apt/amk.wtf-debian.asc.gpg
+echo "deb [signed-by=/usr/share/keyrings/amk.wtf-archive-keyring.gpg] http://amk.wtf/apt/grml buster grml" >$target/etc/apt/sources.list.d/amk.wtf.list
+$ROOTCMD apt-get update
