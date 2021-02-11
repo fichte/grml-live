@@ -1,3 +1,149 @@
+grml-live (0.37.2) unstable; urgency=medium
+
+  [ Michael Lass ]
+  * [ea72028] GRUB: remove erroneous quotes around kernelopts
+
+  [ Michael Prokop ]
+  * [87bef6e] initramfs-tools: use upstream's xz handling to support
+    multithreading
+
+ -- Michael Prokop <mika@grml.org>  Fri, 22 Jan 2021 12:01:15 +0100
+
+grml-live (0.37.1) unstable; urgency=medium
+
+  * Fixes:
+    - [0867199] Secure Boot: update grubx64.efi.signed to fix BootHole issue
+    - [780b71c] Add bsdmainutils to DEBORPHAN whitelist
+    - [ddb26a3] Update lintian-overrides for new EFI boot files
+  * Software related changes:
+    - [771fa1a] add mmdebstrap to GRML_FULL + GRML_SMALL.
+      Thanks to Helmut Grohne for the suggestion
+
+ -- Michael Prokop <mika@grml.org>  Tue, 25 Aug 2020 11:49:26 +0200
+
+grml-live (0.37.0) unstable; urgency=medium
+
+  * Fixes:
+    - [b090c76] scripts/GRMLBASE/52-mdadm: unconditionally clear
+      64-md-raid-assembly.rules
+    - [5c3e795] Store logfiles also when FAI's dirinstall fails
+    - [67df700] GRUB: don't display BIOS only addons when running
+      in EFI mode
+    - [bf7faea] /e/n/i: move sourcing of /etc/network/interfaces.d/
+      to begin of file
+  * Features:
+    - [7430221] Support usage of boot/addons via symlink to
+      corresponding git repository
+    - [f625781] Be more verbose about boot addons installation
+    - [257dba7] Support EFI capable ipxe.efi boot addon
+    - [871fc96] Provide setup files for EFI boot in netboot package
+  * Software related changes:
+    - [f814855] SW: add grub-efi-amd64-signed + shim-signed to
+      GRML_FULL (AMD64 only)
+
+ -- Michael Prokop <mika@grml.org>  Sat, 18 Jul 2020 22:02:21 +0200
+
+grml-live (0.36.0) unstable; urgency=medium
+
+  * Fixes:
+    - [8772657] Do not depend on /proc for calculating runtime
+  * Software related changes:
+    - [6542652] add tmate to GRML_SMALL + GRML_FULL
+    - [4b6fd81] add qrencode to GRML_SMALL and GRML_FULL
+  * Features:
+    - [518eb39] Refresh Secure Boot support, supporting new
+      'debian' method. Thanks to Jordan Uggla for feedback
+
+ -- Michael Prokop <mika@grml.org>  Wed, 24 Jun 2020 11:34:03 +0200
+
+grml-live (0.35.4) unstable; urgency=medium
+
+  [ Darshaka Pathirana ]
+  * [d56d6fa] Add boot option pnet (Predictable Network Interface Names)
+
+  [ Michael Prokop ]
+  * [950b6bb] Adjust layout of "Predictable Network Interface Names" boot
+    option
+
+ -- Michael Prokop <mika@grml.org>  Fri, 05 Jun 2020 13:34:01 +0200
+
+grml-live (0.35.3) unstable; urgency=medium
+
+  * Software related changes:
+    - [cb7d1f2] add wireguard to GRML_FULL
+  * Fixes:
+    - [6b2e23d] GRMLBASE/98-clean-chroot: avoid warning messages
+      with resolvconf <1.80
+    - [397c7e7] Use debootstrap with --no-merged-usr by default
+    - [b4b524c] No longer refer to sources.grml.org
+
+ -- Michael Prokop <mika@grml.org>  Wed, 03 Jun 2020 16:47:04 +0200
+
+grml-live (0.35.2) unstable; urgency=medium
+
+  * Software related changes:
+    - [1ec1cfe] add avahi-utils to GRML_FULL
+  * Features:
+    - [a28b1c2] etc/network/interfaces/GRMLBASE: support
+      /etc/network/interfaces.d/* in /e/n/i (for cloud-init support)
+
+ -- Michael Prokop <mika@grml.org>  Thu, 28 May 2020 17:34:05 +0200
+
+grml-live (0.35.1) unstable; urgency=medium
+
+  * Fixes:
+    - [ba45725] deborphan: add workaround for transitional package dnsutils
+    - [3140b83] deborphan: drop deprecated packages
+    - [f37fcf9] Move scripts/GRMLBASE/40-deborphan towards DEBORPHAN class
+      as file 10-whitelist
+    - [87be754] DEBORPHAN/10-whitelist: highlight when dnsutils gets added
+      to whitelist
+    - [cd7c095] DEBORPHAN/10-whitelist: provide workaround for Debian bug
+      #929273
+    - [cb6179f] DEBORPHAN/10-whitelist: rework fix for broken keep file
+      handling of deborphan
+
+  * Documentation:
+    - [856efb5] docs: update ISO sizes and disk requirements, we no
+      longer provide support for file-rc
+
+  * Software related changes:
+    - [bda859c] add fdisk to GRMLBASE
+
+ -- Michael Prokop <mika@grml.org>  Wed, 20 May 2020 17:13:24 +0200
+
+grml-live (0.35.0) unstable; urgency=medium
+
+  * Fixes:
+    - [e5e4578] GRMLBASE/98-clean-chroot: get rid of /wget-log* files
+    - [acf12d4] GRMLBASE/98-clean-chroot: fix resolvconf symlink
+      handling + get rid of resolvconf workarounds
+    - [ef6dc82] DEBIAN_STABLE: use buster-backports instead of
+      stretch-backports
+    - [31cd53a] scripts/GRMLBASE/50-lvm: unconditionally clear
+      69-lvm-metad.rules file. Thanks to Dr. András Korn
+    - [2ece298] initramfs xz-compress: use default xz compression level.
+      Thanks to Dr. András Korn
+    - [e1e107a] GRMLBASE/80-initramfs: no longer set CRYPTSETUP=y
+    - [c557940] sudoers: set Defaults secure_path to have sane
+      default settings
+
+  * New features:
+    - [3fc930d] Initial cloud-init support
+
+  * Debian packaging:
+    - [914ab11] Bump Standards-Version to 4.5.0
+    - [b47433a] Bump Debian compat version to 12, using
+      debhelper-compat approach
+    - [0edda67] Execute 'wrap-and-sort -a -t -s' on debian/
+
+  * Software related changes:
+    - [422c49b] SW: add radvd
+    - [fbb0edd] SW: drop hfsprogs from GRML_FULL
+    - [95f7765] SW: add cloud-init to GRML_FULL
+
+ -- Michael Prokop <mika@grml.org>  Tue, 12 May 2020 16:34:01 +0200
+
 grml-live (0.34.4) unstable; urgency=medium
 
   [ Michael Prokop ]

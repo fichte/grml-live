@@ -132,6 +132,7 @@ cdebootstrap
 crosshurd
 debootstrap
 kexec-tools
+mmdebstrap
 rinse
 
 # iscsi (target) support
@@ -147,6 +148,7 @@ vblade
 # networking
 atftp
 avahi-daemon
+avahi-utils
 bind9-host
 bridge-utils
 cdpr
@@ -198,11 +200,13 @@ ssmping
 tcpdump
 tcptraceroute
 telnet
+tmate
 tshark
 tsocks
 uml-utilities
 usb-modeswitch
 vlan
+wireguard
 wireshark
 wvdial
 
@@ -280,6 +284,7 @@ mawk
 mc
 patch
 pv
+qrencode
 screen
 sed
 tmux
@@ -353,3 +358,7 @@ linux-cpupower
 PACKAGES install AMD64
 linux-image-amd64
 linux-cpupower
+
+# EFI PXE boot support in grml-terminalserver
+grub-efi-amd64-signed
+shim-signed

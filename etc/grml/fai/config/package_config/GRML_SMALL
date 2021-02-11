@@ -53,6 +53,7 @@ lsscsi
 mawk
 mbr
 memtester
+mmdebstrap
 mount
 mtools
 mtr-tiny
@@ -73,6 +74,7 @@ pppoeconf
 procps
 psmisc
 qemu-guest-agent
+qrencode
 rdnssd
 reiserfsprogs
 rfkill
@@ -88,6 +90,7 @@ sysvinit-utils
 tar
 tcpdump
 telnet
+tmate
 tree
 tsocks
 tzdata
