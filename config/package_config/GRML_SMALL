@@ -154,6 +154,11 @@ wget
 # special terminal output
 toilet
 
+# additional packages from fichte
+debootstrap
+fail2ban
+pigz
+
 PACKAGES install I386
 linux-image-686
 memtest86+

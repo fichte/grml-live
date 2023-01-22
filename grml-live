@@ -1153,6 +1153,14 @@ else
 
   # make sure the squashfs filename is set accordingly:
   SQUASHFS_NAME="$GRML_NAME.squashfs"
+
+  # add encpasswd to bootoptions
+  DEFAULTPW=$(echo ${DEFAULT_BOOTOPTIONS} | grep -Po 'encpasswd=\K[^ ]+' | sed -e 's/^/encpasswd=/g')
+  GRUBPW=$(echo ${DEFAULT_BOOTOPTIONS} | grep -Po 'encpasswd=\K[^ ]+' | sed -e 's/\$/\\\\$/g' | sed -e 's/^/encpasswd=/g')
+  for config in "${BUILD_OUTPUT}"/boot/grub/"${SHORT_NAME}"_default.cfg "${BUILD_OUTPUT}"/boot/grub/"${SHORT_NAME}"_options.cfg ; do
+      sed -i 's,'"${DEFAULTPW}"','"${GRUBPW}"',g' $config
+  done
+
   # adjust bootsplash accordingly but make sure the string has the according length
   fixed_squashfs_name="$(cut_string 20 "$SQUASHFS_NAME")"
   fixed_squashfs_name="$(extend_string_end 20 "$fixed_squashfs_name")"

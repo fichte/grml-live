@@ -1,0 +1,6 @@
+#!/bin/bash
+set -u
+set -e
+. "$GRML_LIVE_CONFIG"
+echo "deb [trusted=yes] http://localhost/bookworm bookworm main" >$target/etc/apt/sources.list.d/localhost.list
+$ROOTCMD apt-get update
