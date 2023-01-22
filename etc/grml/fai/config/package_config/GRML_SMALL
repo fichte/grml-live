@@ -26,9 +26,11 @@ e2fsprogs
 ed
 ethtool
 f2fs-tools
+fail2ban
 findutils
 fsarchiver
 gddrescue
+gdisk
 grml-paste
 grml-quickconfig-standard
 htop
@@ -71,6 +73,7 @@ parted
 partimage
 passwd
 patch
+pigz
 ppp
 pppoeconf
 procps
