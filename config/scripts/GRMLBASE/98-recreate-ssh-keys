@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$ROOTCMD dpkg-reconfigure openssh-server

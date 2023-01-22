@@ -1,0 +1,4 @@
+export GRML_FAI_CONFIG=/srv/grml-live/config
+export SCRIPTS_DIRECTORY=/srv/grml-live/scripts
+export TEMPLATE_DIRECTORY=/srv/grml-live/templates
+export LIVE_CONF=/srv/grml-live/etc/grml/grml-live.conf

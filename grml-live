@@ -790,7 +790,6 @@ else
   log   "Installing media files from chroot build"
   cp --preserve=timestamp -r "$CHROOT_OUTPUT/grml-live/media/." "$BUILD_OUTPUT/"
   eend 0
-
   einfo "Finished execution of stage 'boot'" ; eend 0
 fi # BOOTSTRAP_ONLY
 

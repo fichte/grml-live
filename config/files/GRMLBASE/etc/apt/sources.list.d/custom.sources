@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://localhost/trixie
+Suites: trixie
+Components: main
+Trusted: yes
