@@ -3,7 +3,6 @@ PACKAGES install
 grml-live
 grml-paste
 grml-quickconfig-standard
-grml-terminalserver
 
 # base os
 apt
@@ -41,9 +40,6 @@ brltty
 espeak-ng
 espeakup
 
-# broken userland debugging
-ltrace
-
 # deploy on remote sites
 openvpn
 ppp
@@ -51,10 +47,8 @@ pppoeconf
 
 # disk subsystems support/debugging
 array-info
-cciss-vol-status
 cryptsetup
 disktype
-dmraid
 dmsetup
 f3
 fai-setup-storage
@@ -76,7 +70,6 @@ stenc
 # disk partitioning/boot
 boot-info-script
 gparted
-grub-pc-bin
 kpartx
 mbr
 partclone
@@ -93,6 +86,7 @@ hexedit
 nano
 vim
 vim-gtk3
+xxd
 zile
 
 # filesystem support
@@ -113,7 +107,6 @@ ntfs-3g
 reiser4progs
 reiserfsprogs
 tcplay
-thin-provisioning-tools
 xfsdump
 xfsprogs
 xmount
@@ -158,7 +151,6 @@ bridge-utils
 cdpr
 cifs-utils
 cloud-init
-dhcpcd
 dnsmasq
 dnsutils
 ethstatus
@@ -335,13 +327,16 @@ xterm
 # x86 hardware support
 acpi
 acpi-support
-cmospwd
-cpuid
 irqbalance
 lm-sensors
 lshw
 numactl
 usbview
+
+# firmware updates
+fwupd
+policykit-1
+udisks2
 
 # testing
 bats
@@ -350,14 +345,63 @@ stress
 # docs
 man-db
 
+# special terminal output
+lolcat
+toilet
+
 PACKAGES install I386
+# kernel related
 linux-image-686
 linux-cpupower
+# disk subsystems support/debugging, I386/AMD64 specific
+cciss-vol-status
+# x86 hardware support
+cmospwd
+cpuid
+memtest86+
+# broken userland debugging
+ltrace
+# disk partitioning/boot
+grub-pc-bin
+
+# PXE boot
+grml-terminalserver
+
+# firmware updates
+fwupd-i386-signed
+
+# X - not relevant on more recent systems, so ship on i386 only
+xserver-xorg-video-intel
 
 PACKAGES install AMD64
+# kernel related
 linux-image-amd64
 linux-cpupower
+# disk subsystems support/debugging
+cciss-vol-status
+# x86 hardware support
+cmospwd
+cpuid
+memtest86+
+# broken userland debugging
+ltrace
+# disk partitioning/boot
+grub-pc-bin
+
+# PXE boot
+grml-terminalserver
 
 # EFI PXE boot support in grml-terminalserver
 grub-efi-amd64-signed
 shim-signed
+
+# firmware updates
+fwupd-amd64-signed
+
+PACKAGES install ARM64
+# kernel related
+linux-image-arm64
+linux-cpupower
+
+# firmware updates
+fwupd-arm64-signed

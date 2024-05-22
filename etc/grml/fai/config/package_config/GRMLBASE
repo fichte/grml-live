@@ -6,14 +6,12 @@ console-data
 console-setup
 cryptsetup-initramfs
 dbus
-deborphan
 dmidecode
 efibootmgr
 eject
 fdisk
 file
 gpm
-grml2usb
 grml-autoconfig
 grml-crypt
 grml-debian-keyring
@@ -28,9 +26,6 @@ grml-scripts
 grml-scripts-core
 grml-tips
 grml-udev-config
-grub-efi-amd64-bin
-grub-efi-ia32-bin
-grub-pc
 haveged
 hdparm
 hwinfo
@@ -51,7 +46,6 @@ resolvconf
 rsync
 rsyslog
 strace
-syslinux syslinux-common syslinux-utils
 udev
 usbutils
 uuid-runtime
@@ -83,3 +77,20 @@ firmware-zd1211
 
 libpam-systemd
 systemd-container
+
+PACKAGES install I386
+grub-pc
+grub-efi-amd64-bin
+grub-efi-ia32-bin
+syslinux syslinux-common syslinux-utils
+grml2usb
+
+PACKAGES install AMD64
+grub-pc
+grub-efi-amd64-bin
+grub-efi-ia32-bin
+syslinux syslinux-common syslinux-utils
+grml2usb
+
+PACKAGES install ARM64
+grub-efi-arm64-bin

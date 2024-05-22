@@ -16,10 +16,8 @@ cpio
 cryptsetup
 cu
 dctrl-tools
-dhcpcd
 diffutils
 disktype
-dmraid
 dmsetup
 dos2unix
 dosfstools
@@ -108,11 +106,19 @@ wget
 whois
 wipe
 xfsprogs
+xxd
 zip
 zsh
+zstd
+
+# special terminal output
+toilet
 
 PACKAGES install I386
 linux-image-686
 
 PACKAGES install AMD64
 linux-image-amd64
+
+PACKAGES install ARM64
+linux-image-arm64
